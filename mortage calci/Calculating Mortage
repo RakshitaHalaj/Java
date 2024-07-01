@@ -1,0 +1,28 @@
+//Calculating Mortage payments with an Equation
+//p is Principal.
+//r is monthly interest rate
+//n is number of payments
+//code 
+import java.text.NumberFormat;
+import java.util.Scanner;
+
+public class calci {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner=new Scanner(System.in);
+		final byte month_in_year=12;
+		final byte percentage=100;
+		
+		System.out.print("Enter principal:");
+		int p=scanner.nextInt();
+		System.out.print("Enter Annal Interest:");
+		float a=scanner.nextFloat();
+		float r=a/month_in_year/percentage;
+		System.out.print("Enter period(year):");
+		byte year=scanner.nextByte();
+		int n=year*month_in_year;
+		double mortage= p*(r*Math.pow(1+r, n))/(Math.pow(1+r,n)-1);
+		//DecimalFormat mortageFormatted=(DecimalFormat) NumberFormat.getCurrencyInstance();
+		System.out.print("Mortage:"+mortage);
+		
